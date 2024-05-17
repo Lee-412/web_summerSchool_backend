@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Thumbnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "CourseID": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "TuitionFee": {
+      "type": "float",
+      "required": true
+    },
+    "Size": {
+      "type": "biginteger",
+      "required": true,
+      "default": "0"
+    },
+    "CurrentSize": {
+      "type": "biginteger",
+      "required": true,
+      "default": "0"
+    },
+    "Start": {
+      "type": "date"
+    },
+    "end": {
+      "type": "date"
+    },
+    "MainLecturer": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "lecturer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lecturer.lecturer",
+      "inversedBy": "courses"
+    },
+    "students": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::student.student",
+      "inversedBy": "courses"
+    }
+  }
+}
