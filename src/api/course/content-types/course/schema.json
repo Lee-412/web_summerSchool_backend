@@ -4,7 +4,8 @@
   "info": {
     "singularName": "course",
     "pluralName": "courses",
-    "displayName": "Course"
+    "displayName": "Course",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,12 +20,12 @@
       "type": "blocks"
     },
     "Thumbnail": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "CourseID": {
       "type": "string",
@@ -50,11 +51,6 @@
     },
     "end": {
       "type": "date"
-    },
-    "MainLecturer": {
-      "type": "string",
-      "required": true,
-      "unique": false
     },
     "lecturer": {
       "type": "relation",

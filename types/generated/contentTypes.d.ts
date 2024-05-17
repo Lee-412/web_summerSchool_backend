@@ -794,6 +794,7 @@ export interface ApiCourseCourse extends Schema.CollectionType {
     singularName: 'course';
     pluralName: 'courses';
     displayName: 'Course';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -810,7 +811,6 @@ export interface ApiCourseCourse extends Schema.CollectionType {
       Attribute.DefaultTo<'0'>;
     Start: Attribute.Date;
     end: Attribute.Date;
-    MainLecturer: Attribute.String & Attribute.Required;
     lecturer: Attribute.Relation<
       'api::course.course',
       'manyToOne',
