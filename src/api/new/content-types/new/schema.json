@@ -4,23 +4,14 @@
   "info": {
     "singularName": "new",
     "pluralName": "news",
-    "displayName": "New"
+    "displayName": "article",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "UserId": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
-    "name": {
-      "type": "string",
-      "required": true,
-      "unique": false
-    },
     "title": {
       "type": "string",
       "required": true
@@ -29,19 +20,16 @@
       "type": "string",
       "required": true
     },
-    "content": {
-      "type": "string",
-      "required": true
-    },
     "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "published": {
       "type": "date",
@@ -49,6 +37,14 @@
     },
     "expiredDate": {
       "type": "date",
+      "required": true
+    },
+    "Author": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "blocks",
       "required": true
     }
   }

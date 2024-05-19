@@ -888,20 +888,20 @@ export interface ApiNewNew extends Schema.CollectionType {
   info: {
     singularName: 'new';
     pluralName: 'news';
-    displayName: 'New';
+    displayName: 'article';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    UserId: Attribute.String & Attribute.Required & Attribute.Unique;
-    name: Attribute.String & Attribute.Required;
     title: Attribute.String & Attribute.Required;
     category: Attribute.String & Attribute.Required;
-    content: Attribute.String & Attribute.Required;
     media: Attribute.Media;
     published: Attribute.Date & Attribute.Required;
     expiredDate: Attribute.Date & Attribute.Required;
+    Author: Attribute.String & Attribute.Required;
+    content: Attribute.Blocks & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -929,7 +929,7 @@ export interface ApiStudentStudent extends Schema.CollectionType {
     IdentityCode: Attribute.String & Attribute.Required & Attribute.Unique;
     MSV: Attribute.String & Attribute.Unique;
     email: Attribute.Email & Attribute.Required & Attribute.Unique;
-    avatar: Attribute.Media & Attribute.Required;
+    avatar: Attribute.Media;
     phone: Attribute.String & Attribute.Required & Attribute.Unique;
     gender: Attribute.Enumeration<['male', 'female']> & Attribute.Required;
     Address: Attribute.String & Attribute.Required;
@@ -938,6 +938,7 @@ export interface ApiStudentStudent extends Schema.CollectionType {
       'manyToMany',
       'api::course.course'
     >;
+    Purpose: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
