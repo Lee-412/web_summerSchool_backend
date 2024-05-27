@@ -939,6 +939,10 @@ export interface ApiStudentStudent extends Schema.CollectionType {
       'api::course.course'
     >;
     Purpose: Attribute.String & Attribute.Required;
+    classification: Attribute.Enumeration<
+      ['Sinh vi\u00EAn', 'Ng\u01B0\u1EDDi \u0111i l\u00E0m', 'Kh\u00E1c']
+    > &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -68,6 +68,15 @@
     "Purpose": {
       "type": "string",
       "required": true
+    },
+    "classification": {
+      "type": "enumeration",
+      "enum": [
+        "Sinh viên",
+        "Người đi làm",
+        "Khác"
+      ],
+      "required": true
     }
   }
 }
